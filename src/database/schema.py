@@ -1,7 +1,7 @@
 from sqlalchemy import Table, Column, Text, Integer, DateTime, ForeignKey, Enum, Float
 from sqlalchemy.dialects.postgresql import UUID
 from src.database.execution import db_client
-
+#REMEMEBERRR handle sql injection
 
 status_enum = Enum(
     'active', 'disabled', 'in_progress', 'arrived', 

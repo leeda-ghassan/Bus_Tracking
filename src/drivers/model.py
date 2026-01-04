@@ -2,7 +2,6 @@ from pydantic import BaseModel, ConfigDict
 from uuid import UUID
 from datetime import datetime
 from typing import Optional
-from admins.schema import id as admin_id
 
 class DriverBase(BaseModel):
     id : UUID
@@ -10,7 +9,6 @@ class DriverBase(BaseModel):
     email: str
     bus_number: int
     phone: int 
-    admin_id: str
     created_at: datetime = datetime.now()
 
 class DriverUpdate(BaseModel):
@@ -19,7 +17,6 @@ class DriverUpdate(BaseModel):
     password: Optional[str] = None
     bus_number: Optional[int] = None
     phone: Optional[int] = None
-    admin_id: Optional[str] = None
     updated_at: Optional[datetime]  = None
 
 class Driver(DriverBase):

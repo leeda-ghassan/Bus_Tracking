@@ -23,7 +23,7 @@ class RouteUpdate(BaseModel):
     name: Optional[str] = None
     description: Optional[str] = None
     status: Optional[StatusEnum] = None
-    updated_at: Optional[datetime] = None    
+    updated_at: Optional[datetime] = None
 
 class RouteDelete(BaseModel):
-    deleted_at: Optional[datetime] = None    
+    deleted_at: Optional[datetime] = None
