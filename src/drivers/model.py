@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr, ConfigDict
+from pydantic import BaseModel, ConfigDict
 from uuid import UUID
 from datetime import datetime
 from typing import Optional
@@ -22,12 +22,9 @@ class DriverUpdate(BaseModel):
     admin_id: Optional[str] = None
     updated_at: Optional[datetime]  = None
 
-# --- Schema for Returning Driver Data ---
 class Driver(DriverBase):
     id: UUID
-    
     updated_at: Optional[datetime] = None
-    
     model_config = ConfigDict(from_attributes=True)
 
 class DriverDelete(Driver):

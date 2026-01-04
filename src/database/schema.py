@@ -1,4 +1,4 @@
-from sqlalchemy import Table, Column, Text, Integer, DateTime, Boolean, ForeignKey, Enum, Float
+from sqlalchemy import Table, Column, Text, Integer, DateTime, ForeignKey, Enum, Float
 from sqlalchemy.dialects.postgresql import UUID
 from src.database.execution import db_client
 
