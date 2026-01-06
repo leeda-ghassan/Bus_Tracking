@@ -2,9 +2,7 @@ from pydantic import BaseModel
 from uuid import UUID
 from datetime import datetime
 from typing import Optional
-
-# creating student
-class StudentBase(BaseModel):
+class StudentCreate(BaseModel):
     student_id: UUID
     name: str
     email: str
@@ -18,6 +16,5 @@ class StudentUpdate(BaseModel):
     major: Optional[str] = None
     updated_at: Optional[datetime] = None
 
-
-class StudentDelete(StudentBase):
+class StudentDelete(BaseModel):
     deleted_at:datetime = datetime.now()

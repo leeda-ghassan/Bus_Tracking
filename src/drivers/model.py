@@ -3,7 +3,7 @@ from uuid import UUID
 from datetime import datetime
 from typing import Optional
 
-class DriverBase(BaseModel):
+class DriverCreate(BaseModel):
     id : UUID
     name: str
     email: str
@@ -19,7 +19,7 @@ class DriverUpdate(BaseModel):
     phone: Optional[int] = None
     updated_at: Optional[datetime]  = None
 
-class Driver(DriverBase):
+class Driver(BaseModel):
     id: UUID
     updated_at: Optional[datetime] = None
     model_config = ConfigDict(from_attributes=True)

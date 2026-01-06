@@ -1,14 +1,8 @@
-from sqlalchemy import (
-    select,
-    insert,
-    update,
-    delete,
-    and_
-)
+from sqlalchemy import (select, insert, update, delete, and_)
 from src.database.schema import admin
 from src.authentications.hash import HashHelper
 from src.database.execution import db_client
-from src.admins.model import AdminCreate, AdminUpdate 
+from src.admins.model import AdminCreate
 from uuid import UUID
 from datetime import datetime
 
@@ -39,7 +33,7 @@ class AdminQueries:
         stmt = select(admin).where(
             and_(
                 admin.c.email == email,
-                not admin.c.is_deleted
+                admin.c.is_deleted.is_(False)
             )
         )
         result = self.db_client.execute_one(stmt)
